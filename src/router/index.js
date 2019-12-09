@@ -1,27 +1,34 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Router from 'vue-router'
+import home from '../components/home.vue'
+import login from '../components/login.vue'
+import dailyWork from '../components/privatework/dailyWork.vue'
+import studyReport from '../components/privatework/studyReport.vue'
+import project from '../components/itemcenter/project.vue'
+import statement from '../components/itemcenter/statement.vue'
+import staff from '../components/administration/staff.vue'
+import member from '../components/server/member.vue'
+import news from '../components/server/news.vue'
+import address from '../components/server/address.vue'
 
-Vue.use(VueRouter)
-
-const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
-
-const router = new VueRouter({
-  routes
+Vue.use(Router)
+const router = new Router({
+  routes: [
+    { path: '/', redirect: '/login' },
+    { path: '/login', component: login },
+    { path: '/home',
+      component: home,
+      children: [
+        { path: '/dailyWork', component: dailyWork },
+        { path: '/studyReport', component: studyReport },
+        { path: '/project', component: project },
+        { path: '/statement', component: statement },
+        { path: '/staff', component: staff },
+        { path: '/member', component: member },
+        { path: '/news', component: news },
+        { path: '/address', component: address }
+      ]
+    }
+  ]
 })
-
 export default router
