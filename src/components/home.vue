@@ -43,24 +43,24 @@
             <el-submenu index="5">
               <!-- 一级菜单的模板区域 -->
               <template slot="title"><span>人事酬薪</span></template>
-              <el-menu-item index="5-1">我的考勤</el-menu-item>
-              <el-menu-item index="5-2">考勤管理</el-menu-item>
-              <el-menu-item index="5-3">业绩管理</el-menu-item>
-              <el-menu-item index="5-4">我的酬薪</el-menu-item>
-              <el-menu-item index="5-5">劳动合同</el-menu-item>
-              <el-menu-item index="5-6">签约合同</el-menu-item>
+              <el-menu-item index="myAttendance">我的考勤</el-menu-item>
+              <el-menu-item index="attendance">考勤管理</el-menu-item>
+              <el-menu-item index="performance">业绩管理</el-menu-item>
+              <el-menu-item index="mySalary">我的酬薪</el-menu-item>
+              <el-menu-item index="agreement">劳动合同</el-menu-item>
+              <el-menu-item index="signAgreement">签约合同</el-menu-item>
             </el-submenu>
             <el-submenu index="6">
               <!-- 一级菜单的模板区域 -->
               <template slot="title"><span>财务中心</span></template>
-              <el-menu-item index="6-1">费用报销</el-menu-item>
+              <el-menu-item index="reimbursement">费用报销</el-menu-item>
               <el-menu-item index="6-2">财务报表</el-menu-item>
             </el-submenu>
             <el-submenu index="7">
               <!-- 一级菜单的模板区域 -->
               <template slot="title"><span>客户中心</span></template>
-              <el-menu-item index="6-1">客户名单</el-menu-item>
-              <el-menu-item index="6-2">客户动态</el-menu-item>
+              <el-menu-item index="customList">客户名单</el-menu-item>
+              <el-menu-item index="customerDynamics">客户动态</el-menu-item>
             </el-submenu>
           </el-menu>
           </el-aside>
