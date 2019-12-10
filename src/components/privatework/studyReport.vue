@@ -15,34 +15,34 @@
             <el-col :span='5'>
                 <el-input v-model="input" placeholder="编号"></el-input>
             </el-col>
-            <el-col :span='3'>
-                <el-input
-                    placeholder="请选择开始日期"
-                    suffix-icon="el-icon-date"
-                    v-model="input1">
-                </el-input>
-            </el-col>
-            <el-col :span='3'>
-                <el-input
-                    placeholder="请选择结束日期"
-                    suffix-icon="el-icon-date"
-                    v-model="input2">
-                </el-input>
-            </el-col>
+             <el-col :span='3.5'>
+                    <el-date-picker
+                        v-model="input1"
+                        type="date"
+                        placeholder="开始日期">
+                    </el-date-picker>
+                </el-col>
+                <el-col :span='3.5'>
+                    <el-date-picker
+                        v-model="input2"
+                        type="date"
+                        placeholder="结束日期">
+                    </el-date-picker>
+                </el-col>
             <el-col :span='2.5'><el-button type='warning'>立即查询</el-button></el-col>
             <el-col :span='2.5'><el-button type='primary'>重置查询</el-button></el-col>
             <el-col :span='3.5'><el-button type='primary'>导出Excel</el-button></el-col>
-            <el-col :span='3'><el-button type='primary'>新增报告</el-button></el-col>
+            <el-col :span='3'><el-button type='primary' @click="getNewReport">新增报告</el-button></el-col>
         </el-row>
         <el-row :gutter='5' class="row_two">
             <el-col :span='1.5'>
-                <el-button type='warning'>我的报告</el-button>
+                <el-button :type='chooseType==1?"warning":"primary"' @click="reportSet(1)">我的报告</el-button>
             </el-col>
             <el-col :span='1.5'>
-                <el-button type='primary'>我点评的报告</el-button>
+                <el-button :type='chooseType==2?"warning":"primary"' @click="reportSet(2)">我点评的报告</el-button>
             </el-col>
             <el-col :span='3'>
-                <el-button type='primary'>全部报告</el-button>
+                <el-button :type='chooseType==3?"warning":"primary"' @click="reportSet(3)">全部报告</el-button>
             </el-col>
         </el-row>
         <el-table
@@ -161,14 +161,22 @@ export default {
           reportPeople: '齐石',
           commitPeople: '范跑跑'
         }
-      ]
+      ],
+      // 下方报告的选项
+      chooseType: 1
     }
   },
   created () {
 
   },
   methods: {
-
+    reportSet (type) {
+      this.chooseType = type
+      // console.log(this.chooseType)
+    },
+    getNewReport () {
+      this.$router.push('/newSet')
+    }
   }
 }
 </script>

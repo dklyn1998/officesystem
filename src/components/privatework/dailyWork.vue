@@ -15,19 +15,19 @@
                         </el-option>
                     </el-select>
                 </el-col>
-                <el-col :span='3'>
-                    <el-input
-                        placeholder="请选择开始日期"
-                        suffix-icon="el-icon-date"
-                        v-model="input1">
-                    </el-input>
+                 <el-col :span='3.5'>
+                    <el-date-picker
+                        v-model="input1"
+                        type="date"
+                        placeholder="开始日期">
+                    </el-date-picker>
                 </el-col>
-                <el-col :span='3'>
-                    <el-input
-                        placeholder="请选择结束日期"
-                        suffix-icon="el-icon-date"
-                        v-model="input2">
-                    </el-input>
+                <el-col :span='3.5'>
+                    <el-date-picker
+                        v-model="input2"
+                        type="date"
+                        placeholder="结束日期">
+                    </el-date-picker>
                 </el-col>
                 <el-col :span='3'>
                     <el-select v-model="value1" placeholder="阶段">
@@ -42,7 +42,7 @@
                 <el-col :span='2.5'><el-button type='warning'>立即查询</el-button></el-col>
                 <el-col :span='1.5'><el-button type='primary'>重置查询</el-button></el-col>
                 <el-col :span='1.5'><el-button type='primary'>移交任务</el-button></el-col>
-                <el-col :span='4.5'><el-button type='primary'>新增任务</el-button></el-col>
+                <el-col :span='4.5'><el-button type='primary' @click="getNewReport">新增任务</el-button></el-col>
             </el-row>
             <el-table
                 :data="tableData"
@@ -162,7 +162,9 @@ export default {
 
   },
   methods: {
-
+    getNewReport () {
+      this.$router.push('/newSet')
+    }
   }
 }
 </script>

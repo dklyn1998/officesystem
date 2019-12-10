@@ -167,7 +167,6 @@ export default {
           realityMoney: '820.00',
           status: '审核中'
         }
-
       ]
     }
   },

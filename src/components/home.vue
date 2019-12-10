@@ -30,7 +30,7 @@
             <el-submenu index="3">
               <!-- 一级菜单的模板区域 -->
               <template slot="title"><span>行政管理</span></template>
-              <el-menu-item index="3-1">部门管理</el-menu-item>
+              <el-menu-item index="department">部门管理</el-menu-item>
               <el-menu-item index="staff">职员管理</el-menu-item>
             </el-submenu>
             <el-submenu index="4">
@@ -54,7 +54,7 @@
               <!-- 一级菜单的模板区域 -->
               <template slot="title"><span>财务中心</span></template>
               <el-menu-item index="reimbursement">费用报销</el-menu-item>
-              <el-menu-item index="6-2">财务报表</el-menu-item>
+              <el-menu-item index="financialStatement">财务报表</el-menu-item>
             </el-submenu>
             <el-submenu index="7">
               <!-- 一级菜单的模板区域 -->

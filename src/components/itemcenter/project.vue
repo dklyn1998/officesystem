@@ -44,8 +44,7 @@
                 </el-col>
                 <el-col :span='2.5'><el-button type='warning'>立即查询</el-button></el-col>
                 <el-col :span='1.5'><el-button type='primary'>重置查询</el-button></el-col>
-                <el-col :span='1.5'><el-button type='primary'>移交任务</el-button></el-col>
-                <el-col :span='4.5'><el-button type='primary'>新增任务</el-button></el-col>
+                <el-col :span='4.5'><el-button type='primary' @click="newProject">新增项目</el-button></el-col>
             </el-row>
             <el-table
                 :data="tableData"
@@ -210,7 +209,9 @@ export default {
 
   },
   methods: {
-
+    newProject () {
+      this.$router.push('/itemNew')
+    }
   }
 }
 </script>

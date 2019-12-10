@@ -41,7 +41,7 @@
                 </el-col>
                 <el-col :span='2.5'><el-button type='warning'>立即查询</el-button></el-col>
                 <el-col :span='1.5'><el-button type='primary'>重置查询</el-button></el-col>
-                <el-col :span='4.5'><el-button type='primary'>新增</el-button></el-col>
+                <el-col :span='4.5'><el-button type='primary' @click="getNews">新增</el-button></el-col>
             </el-row>
             <el-table
                 :data="tableData"
@@ -169,7 +169,9 @@ export default {
 
   },
   methods: {
-
+    getNews () {
+      this.$router.push('/getNews')
+    }
   }
 }
 </script>
@@ -177,4 +179,5 @@ export default {
 .el-pagination{
     text-align: right;
 }
+
 </style>
