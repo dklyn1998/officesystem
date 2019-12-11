@@ -17,16 +17,26 @@
                 </el-col>
                 <el-col :span='2.5'><el-button type='warning'>立即查询</el-button></el-col>
                 <el-col :span='1.5'><el-button type='primary'>重置查询</el-button></el-col>
+                <el-col :span='1.5'><el-button type='primary' @click="newAttend">新增</el-button></el-col>
+            </el-row>
+            <el-row class='row_top' :gutter='10'>
+              <el-col :span='1.5'><div @click="isShow(1)" :class="showActive==1?'active':''" class="col_height">考勤结算</div></el-col>
+              <el-col :span='1.5'> <div @click="isShow(2)" :class="showActive==2?'active':''" class="col_height">请假</div> </el-col>
+              <el-col :span='1.5'><div @click="isShow(3)" :class="showActive==3?'active':''" class="col_height">外出</div></el-col>
+              <el-col :span='1.5'><div @click="isShow(4)" :class="showActive==4?'active':''" class="col_height">出差</div></el-col>
+              <el-col :span='1.5'><div @click="isShow(5)" :class="showActive==5?'active':''" class="col_height">加班</div></el-col>
             </el-row>
             <el-table
                 :data="tableData"
                 stripe
                 style="width: 100%"
-                border>
+                border
+                 v-if="showActive==1">
                 <el-table-column
                 type='index'
                 label="NO"
-                width="60">
+                width="60"
+               >
                 </el-table-column>
                 <el-table-column
                 prop="workMan"
@@ -78,6 +88,43 @@
                 label="扣薪">
                 </el-table-column>
             </el-table>
+            <el-table
+                :data="tableData"
+                stripe
+                style="width: 100%"
+                border
+                v-else>
+                <el-table-column
+                type='index'
+                label="NO"
+                width="60">
+                </el-table-column>
+                <el-table-column
+                prop="workMan"
+                label="职员">
+                </el-table-column>
+                <el-table-column
+                prop="position"
+                label="职位">
+                </el-table-column>
+                <el-table-column
+                prop="addTime"
+                label="请假类型"
+                >
+                </el-table-column>
+                <el-table-column
+                prop="sleepEarly"
+                label="起始时间">
+                </el-table-column>
+                <el-table-column
+                prop="backEarly"
+                label="截至时间">
+                </el-table-column>
+                <el-table-column
+                prop="signIn"
+                label="请假事由">
+                </el-table-column>
+            </el-table>
             <el-pagination
                 background
                 layout="prev, pager, next"
@@ -90,6 +137,7 @@
 export default {
   data () {
     return {
+      showActive: 1,
       options1: [{
         value: '选项1',
         label: '黄金糕1'
@@ -215,10 +263,25 @@ export default {
 
   },
   methods: {
-
+    isShow (number) {
+      this.showActive = number
+      console.log(this.showActive)
+    },
+    newAttend () {
+      this.$router.push('/newAttend')
+    }
   }
 }
 </script>
 <style>
-
+.row_top{
+  margin-top: 20px;
+}
+.col_height{
+  padding: 5px;
+}
+.active{
+  background-color: #FF6900;
+  color: #fff;
+}
 </style>

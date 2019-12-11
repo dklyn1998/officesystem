@@ -68,7 +68,7 @@
           <!-- 头部区域 -->
           <el-header>管理员<el-button>退出</el-button></el-header>
           <!-- 页面主体区域 -->
-          <el-main><router-view></router-view></el-main>
+          <el-main><router-view>欢迎登陆</router-view></el-main>
         </el-container>
       </el-container>
 </template>

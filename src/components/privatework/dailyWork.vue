@@ -120,8 +120,6 @@ export default {
         value2: '选项52',
         label: '北京烤鸭'
       }],
-      value: '',
-      value1: '',
       input: '',
       input1: '',
       input2: '',

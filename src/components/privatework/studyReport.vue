@@ -172,7 +172,7 @@ export default {
   methods: {
     reportSet (type) {
       this.chooseType = type
-      // console.log(this.chooseType)
+      console.log(this.chooseType)
     },
     getNewReport () {
       this.$router.push('/newSet')

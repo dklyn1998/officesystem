@@ -33,7 +33,14 @@ import newDepartment from '../components/administration/newDepartment.vue'
 import positionManager from '../components/administration/positionManager.vue'
 // 添加新闻
 import getNews from '../components/server/getNews.vue'
-
+// 新增职员
+import newMerber from '../components/server/newMerber.vue'
+// 新增请假
+import newAttend from '../components/personnel/newAttend.vue'
+// 财务报销
+import newFinancial from '../components/financial/newFinancial.vue'
+// 新增合同
+import newAgreement from '../components/personnel/newAgreement.vue'
 Vue.use(Router)
 const router = new Router({
   routes: [
@@ -66,7 +73,11 @@ const router = new Router({
         { path: '/newStaff', component: newStaff },
         { path: '/newDepartment', component: newDepartment },
         { path: '/positionManager', component: positionManager },
-        { path: '/getNews', component: getNews }
+        { path: '/getNews', component: getNews },
+        { path: '/newMerber', component: newMerber },
+        { path: '/newAttend', component: newAttend },
+        { path: '/newFinancial', component: newFinancial },
+        { path: '/newAgreement', component: newAgreement }
       ]
     }
   ]
