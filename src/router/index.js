@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import home from '../components/home.vue'
+import welcome from '../components/welcome.vue'
 import login from '../components/login.vue'
 import dailyWork from '../components/privatework/dailyWork.vue'
 import studyReport from '../components/privatework/studyReport.vue'
@@ -41,6 +42,8 @@ import newAttend from '../components/personnel/newAttend.vue'
 import newFinancial from '../components/financial/newFinancial.vue'
 // 新增合同
 import newAgreement from '../components/personnel/newAgreement.vue'
+// 新增客户
+import newCustom from '../components/custom/newCustom.vue'
 Vue.use(Router)
 const router = new Router({
   routes: [
@@ -48,7 +51,9 @@ const router = new Router({
     { path: '/login', component: login },
     { path: '/home',
       component: home,
+      redirect: '/welcome',
       children: [
+        { path: '/welcome', component: welcome },
         { path: '/dailyWork', component: dailyWork },
         { path: '/studyReport', component: studyReport },
         { path: '/project', component: project },
@@ -77,7 +82,8 @@ const router = new Router({
         { path: '/newMerber', component: newMerber },
         { path: '/newAttend', component: newAttend },
         { path: '/newFinancial', component: newFinancial },
-        { path: '/newAgreement', component: newAgreement }
+        { path: '/newAgreement', component: newAgreement },
+        { path: '/newCustom', component: newCustom }
       ]
     }
   ]
