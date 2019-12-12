@@ -6,19 +6,20 @@
                 <img src="../assets/logo.png">
             </div>
             <!-- 登录表单区域 -->
-            <el-form label-width="0px"
+            <el-form label-width="80px"
              class="login_from"
              :model="loginFrom"
              :rules='loginRules'
-             ref='loginRef'>
+             ref='loginRef'
+             >
                 <!-- 用户名 -->
-                <el-form-item prop='username'>
+                <el-form-item prop='username' label='用户名'>
                     <el-input
                       prefix-icon="iconfont icon-user"
                       v-model="loginFrom.username"></el-input>
                 </el-form-item>
                 <!-- 密码 -->
-                <el-form-item prop='password'>
+                <el-form-item prop='password' label='密码'>
                     <el-input
                     prefix-icon="iconfont icon-3702mima"
                     v-model="loginFrom.password"
@@ -82,7 +83,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .login_container{
   background-color: #2b4b6b;
   height: 100%;

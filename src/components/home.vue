@@ -66,7 +66,11 @@
           </el-aside>
         <el-container>
           <!-- 头部区域 -->
-          <el-header>管理员<el-button>退出</el-button></el-header>
+          <el-header>
+            <img src="../assets/logo.png" class='logo_top' alt="">
+            <div class="div_left">管理员</div>
+            <el-button>退出</el-button>
+          </el-header>
           <!-- 页面主体区域 -->
           <el-main><router-view></router-view></el-main>
         </el-container>
@@ -87,7 +91,7 @@ export default {
   }
 }
 </script>
-<style scope>
+<style>
 
 .el-container{
   height: 100%;
@@ -95,10 +99,11 @@ export default {
 .el-header{
   background-color: #fff;
   box-shadow: 0 5px 10px 5px rgba(199, 199, 199, 0.3);
-  text-align:right;
+  /* text-align:right; */
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  min-height: 92px;
 }
 .el-aside{
   display: flex;
@@ -125,5 +130,13 @@ export default {
 .el-menu{
   width: 100%;
 }
-
+.logo_top{
+width: 60px;
+height: 60px;
+border-radius: 50%;
+margin: 20px;
+}
+.div_left{
+  margin-right: 20px;
+}
 </style>

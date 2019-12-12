@@ -199,7 +199,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 .el-pagination{
     text-align: right;
 }

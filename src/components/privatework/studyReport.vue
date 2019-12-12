@@ -180,7 +180,7 @@ export default {
   }
 }
 </script>
-<style scope>
+<style scoped>
 .row_two{
     margin-top: 10px;
 }

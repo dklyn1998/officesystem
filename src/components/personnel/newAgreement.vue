@@ -119,7 +119,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 .ql-editor{
     min-height: 300px;
 }

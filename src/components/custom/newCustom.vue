@@ -151,7 +151,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 .button_set{
     margin: 20px
 }

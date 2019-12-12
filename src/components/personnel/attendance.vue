@@ -273,7 +273,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 .row_top{
   margin-top: 20px;
 }

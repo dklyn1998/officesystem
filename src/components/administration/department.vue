@@ -31,7 +31,8 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
+
 img{
     display: block;
     margin: 30px auto;
